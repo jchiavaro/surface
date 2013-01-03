@@ -1,0 +1,22 @@
+%h2 Hello Surface
+
+= form_tag users_path, :method => :post do
+  = label :user, :first_name, 'First Name'
+  = text_field :user, :first_name
+  = label :user, :last_name, 'Last Name'
+  = text_field :user, :last_name
+  = label :user, :email, 'Your Email'
+  = email_field :user, :email
+  = label :user, :re_email, 'Re-enter mail'
+  = email_field :user, :re_email
+  = label :user, :password, 'Password'
+  = password_field :user, :password
+  = label :user, :password_confirmation, 'Confirmation'
+  = password_field :user, :password_confirmation
+  = label :user, :birthday, 'Birthday'
+  = date_select :user, :birthday
+  = label :user, :gender_male, 'Male'
+  = radio_button :user, :gender, 'male'
+  = label :user, :gender_female, 'Female'
+  = radio_button :user, :gender, 'female'
+  = submit_tag 'Sign Up'
