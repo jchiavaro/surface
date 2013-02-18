@@ -1,4 +1,4 @@
 surface
 =======
 
-A survey creating app
+A survey creation app
