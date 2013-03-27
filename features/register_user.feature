@@ -8,8 +8,7 @@ Feature: Register a new user
     When I fill in the following:
       | First Name       | Jeff              |
       | Last Name        | Smith             |
-      | Your Email       | jsmith@domain.com |
-      | Re-enter mail    | jsmith@domain.com |
+      | Email            | jsmith@domain.com |
       | Password         | top_secret        |
       | Confirmation     | top_secret        |
     And I select "2009-02-20" as the "Birthday" date

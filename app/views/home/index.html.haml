@@ -1,22 +1,23 @@
-%h2 Hello Surface
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %title Surface, a survey App
+  %body
+    #container
+      %form.form-signin{:action => users_path, :method => :post}
+        = text_field :user, :first_name, :placeholder => 'First Name', :class=>"input-block-level"
+        = text_field :user, :last_name, :placeholder=> 'Last Name', :class=>"input-block-level"
+        = email_field :user, :email, :placeholder=> 'Email', :class=>"input-block-level"
+        = password_field :user, :password, :placeholder => 'Password',:class=>"input-block-level"
+        = password_field :user, :password_confirmation, :placeholder => 'Confirmation', :class=>"input-block-level"
+        = label :user, :birthday, 'Birthday'
+        = date_select :user, :birthday, :start_year => 1920
+        .form-inline
+          = label :user, :gender_male, 'Male'
+          = radio_button :user, :gender, 'male', :class => 'radio inline'
+          = label :user, :gender_female, 'Female'
+          = radio_button :user, :gender, 'female', :class => 'radio inline'
 
-= form_tag users_path, :method => :post do
-  = label :user, :first_name, 'First Name'
-  = text_field :user, :first_name
-  = label :user, :last_name, 'Last Name'
-  = text_field :user, :last_name
-  = label :user, :email, 'Your Email'
-  = email_field :user, :email
-  = label :user, :re_email, 'Re-enter mail'
-  = email_field :user, :re_email
-  = label :user, :password, 'Password'
-  = password_field :user, :password
-  = label :user, :password_confirmation, 'Confirmation'
-  = password_field :user, :password_confirmation
-  = label :user, :birthday, 'Birthday'
-  = date_select :user, :birthday
-  = label :user, :gender_male, 'Male'
-  = radio_button :user, :gender, 'male'
-  = label :user, :gender_female, 'Female'
-  = radio_button :user, :gender, 'female'
-  = submit_tag 'Sign Up'
+        %button.btn-large.btn-primary{:type => "submit"} Sign Up
+
