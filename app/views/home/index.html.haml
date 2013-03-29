@@ -1,7 +1,7 @@
 #container
   %form.form-signin{:action => "login", :method => :get}
-    = text_field_tag :username_or_email, nil, :placeholder => 'User email', :class=>"input-block-level"
-    = password_field_tag :password, nil, :placeholder => 'User password',:class=>"input-block-level"
+    = text_field_tag :username_or_email, nil, :placeholder => 'User Email', :class=>"input-block-level"
+    = password_field_tag :password, nil, :placeholder => 'User Password',:class=>"input-block-level"
     %button.btn-large.btn-primary{:type => "submit"} Log in
 
 #container
@@ -18,5 +18,5 @@
       = radio_button :user, :gender, 'male', :class => 'radio inline'
       = label :user, :gender_female, 'Female'
       = radio_button :user, :gender, 'female', :class => 'radio inline'
-      %button.btn-large.btn-primary{:type => "submit"} Sign Up
+    %button.btn-large.btn-primary{:type => "submit"} Sign Up
 
