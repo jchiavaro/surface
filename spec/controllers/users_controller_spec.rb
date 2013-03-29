@@ -28,7 +28,7 @@ describe UsersController do
       assigns(:user).should eq(@user)
     end
 
-    it "should seva the user id in the session" do
+    it "should save the user id in the session" do
       session[:user_id].should eq(@user.id)
     end
 
@@ -47,6 +47,7 @@ describe UsersController do
         @invalid_user = mock('User', @invalid_user_attrs)
       end
       it "should not create the user" do
+        session[:user_id] = nil
         User.should_receive(:new).with(@invalid_user_attrs).and_return(@invalid_user)
         @invalid_user.should_receive(:save).and_return(nil)
         post :create, :user => @invalid_user_attrs
@@ -56,9 +57,19 @@ describe UsersController do
   end
 
   describe "#dashboard" do
-    it "should render the user dashboard" do
+
+    it "if user is not logged in it should render root" do
       user = mock('User', :id => '1')
       User.stub(:find).with(user.id).and_return(user)
+      session[:user_id] = nil
+      get :dashboard, :id => user.id
+      response.should redirect_to(root_path)
+    end
+
+    it "if user is logged in it should render the user dashboard" do
+      user = mock('User', :id => '1')
+      User.stub(:find).with(user.id).and_return(user)
+      session[:user_id] = user.id
       get :dashboard, :id => user.id
       response.should render_template("dashboard")
     end

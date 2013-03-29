@@ -1,7 +1,7 @@
 #container
   %form.form-signin{:action => "login", :method => :get}
-    = text_field_tag :username_or_email, nil, :placeholder => 'User Name', :class=>"input-block-level"
-    = password_field_tag :password, nil, :placeholder => 'Password',:class=>"input-block-level"
+    = text_field_tag :username_or_email, nil, :placeholder => 'User email', :class=>"input-block-level"
+    = password_field_tag :password, nil, :placeholder => 'User password',:class=>"input-block-level"
     %button.btn-large.btn-primary{:type => "submit"} Log in
 
 #container
