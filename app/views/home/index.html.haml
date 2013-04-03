@@ -1,22 +1,9 @@
-#container
-  %form.form-signin{:action => "login", :method => :get}
-    = text_field_tag :username_or_email, nil, :placeholder => 'User Email', :class=>"input-block-level"
-    = password_field_tag :password, nil, :placeholder => 'User Password',:class=>"input-block-level"
-    %button.btn-large.btn-primary{:type => "submit"} Log in
-
-#container
-  %form.form-signin{:action => users_path, :method => :post}
-    = text_field :user, :first_name, :placeholder => 'First Name', :class=>"input-block-level"
-    = text_field :user, :last_name, :placeholder=> 'Last Name', :class=>"input-block-level"
-    = email_field :user, :email, :placeholder=> 'Email', :class=>"input-block-level"
-    = password_field :user, :password, :placeholder => 'Password',:class=>"input-block-level"
-    = password_field :user, :password_confirmation, :placeholder => 'Confirmation', :class=>"input-block-level"
-    = label :user, :birthday, 'Birthday'
-    = date_select :user, :birthday, :start_year => 1920
-    .form-inline
-      = label :user, :gender_male, 'Male'
-      = radio_button :user, :gender, 'male', :class => 'radio inline'
-      = label :user, :gender_female, 'Female'
-      = radio_button :user, :gender, 'female', :class => 'radio inline'
-    %button.btn-large.btn-primary{:type => "submit"} Sign Up
-
+= simple_form_for(:user, url: users_path, :html => { :class => 'form-horizontal' }) do |f|
+  = f.input :first_name, :input_html => { :class => "span6" }, :placeholder => 'First Name'
+  = f.input :last_name, :input_html => { :class => "span6" }, :placeholder => 'Last Name'
+  = f.input :email, :placeholder=> 'Email', :input_html => { :class => "span6" }
+  = f.input :password, :placeholder => 'Password', :input_html => { :class => "span6" }
+  = f.input :password_confirmation, :placeholder => 'Confirmation', :input_html => { :class => "span6" }
+  = f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :day, :year]
+  = f.input :gender, :collection => {'Male'=>'male', 'Female'=>'female'}, :as => :radio_buttons, :item_wrapper_class => 'inline'
+  = f.button :submit, :class => 'btn-primary'

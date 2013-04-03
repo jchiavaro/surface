@@ -1,0 +1,9 @@
+.nav-collapse.collapse
+  %ul.nav
+    %li
+      = link_to('Surface', root_path, class: 'brand')
+
+  =simple_form_for(:user, url: login_path, html:{ class: 'navbar-form pull-right' }) do |f|
+    = f.input :username_or_email, :placeholder => 'User Email', :input_html => { :class => "span2" }
+    = f.password_field :password, :placeholder => 'User Password', :input_html => { :class => "span2" }
+    = f.button :submit, :class => 'btn-primary', 'Login'

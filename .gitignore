@@ -13,4 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+<<<<<<< Updated upstream
 /nbproject
+=======
+/.idea
+>>>>>>> Stashed changes
