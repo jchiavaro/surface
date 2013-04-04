@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
 
   def login_attempt
-    username_or_email = params[:username_or_email]
-    password =  params[:password]
+    @user = User.new(params[:user])
+    username_or_email = @user.email
+    password = @user.password
 
     #how to access the valid_mail_regex in user model
     email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
     if user_found
       authorized_user = user_found.authenticate(password)
     end
-    
+
     if authorized_user
       session[:user_id] = authorized_user.id
       @user = User.find session[:user_id]

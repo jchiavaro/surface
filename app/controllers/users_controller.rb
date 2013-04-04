@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_filter :authenticate_user, :only => [:dashboard]
   before_filter :save_login_state, :only => [:new, :create]
-  
+
   def create
     @user = User.new(params[:user])
     if @user.save
