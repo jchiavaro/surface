@@ -1,9 +1,19 @@
-.nav-collapse.collapse
+= link_to('Surface', root_path, class: 'brand')
+%div{class: 'nav-collapse collapse'}
   %ul.nav
+    %li 
+      =link_to('Home', root_path, class: 'brand')
     %li
-      = link_to('Surface', root_path, class: 'brand')
+      =link_to('About', root_path, class: 'brand')
+    %li
+      =link_to('Contact', root_path, class: 'brand')
 
-  =simple_form_for(:user, url: login_path, html:{ class: 'form-horizontal' }) do |f|
-    = f.input :email, :placeholder => 'User Email', :input_html => { :class => "span2" }
-    = f.password_field :password, :placeholder => 'User Password', :input_html => { :class => "span2" }
-    = f.button :submit, :class => 'btn-primary'
+
+  :plain
+    <form action="/login" class="simple_form navbar-form pull-right" method="post">
+    <input class="string email required" id="user_email" name="user[email]" placeholder="User Email" size="50" type="email" />
+    <input id="user_password" input_html="{:class=&gt;&quot;span2&quot;}" label="false" name="user[password]" placeholder="User Password" size="30" type="password" />
+    <input class="btn btn-primary" input_html="{:class=&gt;&quot;span2&quot;}" name="commit" type="submit" value="Login" />
+    </form>
+
+

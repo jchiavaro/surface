@@ -11,14 +11,14 @@
     = csrf_meta_tags
     = yield(:head)
   %body
-    %header.navbar.navbar-fixed-top
-      %nav.navbar-inner
+    %div{class: 'navbar navbar-inverse navbar-fixed-top'}
+      %div.navbar-inner
         .container
           = render 'layouts/navigation'
       .container
         .content
           .row
-            .span12
+            .span14
               = render partial: 'layouts/messages', flash: flash
               = yield
     %footer
