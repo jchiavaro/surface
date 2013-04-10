@@ -54,6 +54,12 @@ describe UsersController do
         response.should redirect_to(root_path)
       end
     end
+
+    it "if the user is logged in it should render dashboard" do
+      session[:user_id] = @user.id
+      post :create, :user => @user_attrs
+      response.should redirect_to(user_dashboard_path :id => @user.id)
+    end
   end
 
   describe "#dashboard" do
