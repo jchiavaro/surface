@@ -14,3 +14,42 @@ body{
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
 
+/*.alert{
+  width: 900px;
+  text-align: center;
+  margin-left: 150px;
+}*/
+
+.signup h3{
+  color:#8a9f13;
+  text-align: center;
+}
+
+.well {
+  padding: 35px!important;
+  background-color: #fa2;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear,left top,left bottom,from(#ffec46),to(#f09600));
+  background-image: -moz-linear-gradient(#ffec46,#f09600);
+  background-image: -ms-linear-gradient(#ffec46,#f09600);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ffec46),color-stop(100%,#f09600));
+  background-image: -webkit-linear-gradient(#ffec46,#f09600);
+  background-image: -o-linear-gradient(#ffec46,#f09600);
+  background-image: linear-gradient(#ffec46,#f09600);
+  background-position: 0 0;
+  border-color: #ed9200;
+  height: 610px!important;
+}
+
+.home-main-banner-ph{
+  box-shadow: inset 0px 0px 30px #1b1b1b!important;
+}
+
+.hero-unit.home-main-banner-ph h2{
+  color: #8a9f13;
+}
+
+.container-fluid{
+  margin-top: 60px!important;
+  margin-bottom: 10px!important;
+}

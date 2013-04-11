@@ -15,10 +15,7 @@
       %div.navbar-inner
         .container
           = render 'layouts/navigation'
-      .container
-        .content
-          .row
-            .span14
-              = render partial: 'layouts/messages', flash: flash
-              = yield
+      = render partial: 'layouts/messages', flash: flash
+    .container-fluid
+      = yield
     %footer

@@ -1,11 +1,40 @@
-= simple_form_for(:user, url: users_path, :html => { :class => 'form-horizontal' }) do |f|
-  = f.input :first_name, label: false, :input_html => { :class => "span6" }, :placeholder => 'First Name'
-  = f.input :last_name, :input_html => { :class => "span6" }, :placeholder => 'Last Name', label: false
-  = f.input :email, :placeholder=> 'Email', :input_html => { :class => "span6" }, label: false
-  = f.input :password, :placeholder => 'Password', :input_html => { :class => "span6" }, label: false
-  = f.input :password_confirmation, :placeholder => 'Confirmation', :input_html => { :class => "span6" }, label: false
-  = f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :day, :year], label: false
-  = f.input :gender, :collection => {'Male'=>'male', 'Female'=>'female'}, :as => :radio_buttons, :item_wrapper_class => 'inline', label: false
-  = f.button :submit, "Register", :class => 'btn-primary pull-right'
+.row-fluid
+  .span9
+    .hero-unit.home-main-banner-ph
+      %h2 Create online surveys, quizzes and polls
+      %h2 FREE AND UNLIMITED
+      %p Easy
+      %p Real time
+      %p Flexible
+      %p Secure
+      %a.btn.btn-primary.btn-large Learn more &raquo;
+    .row-fluid
+      .span4
+        %h2 Heading
+        %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        %a.btn.btn-success{:href => "#"} View details &raquo;
+      .span4
+        %h2 Heading
+        %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        %a.btn.btn-success{:href => "#"} View details &raquo;
+      .span4
+        %h2 Heading
+        %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        %a.btn.btn-success{:href => "#"} View details &raquo;
+  .span3
+    .well.sidebar-nav
+      .signup
+        %h3 Free instant signup
+      = simple_form_for(:user, url: users_path) do |f|
+        = f.input :first_name, label: false, :placeholder => 'First Name'
+        = f.input :last_name, :placeholder => 'Last Name', label: false
+        = f.input :email, :placeholder=> 'Email', label: false
+        = f.input :password, :placeholder => 'Password',label: false
+        = f.input :password_confirmation, :placeholder => 'Confirmation',  label: false
+        = f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :day, :year], label: false
+        = f.input :gender, :collection => {'Male'=>'male', 'Female'=>'female'}, :as => :radio_buttons, :item_wrapper_class => 'inline', label: false
+        = f.button :submit, "Register", :class => 'btn-primary pull-right'
+
+
 
 
