@@ -27,8 +27,9 @@ body{
 
 .well {
   padding: 35px!important;
-  background-color: #fa2;
-  background-repeat: repeat-x;
+  background-color: #eeeeee;
+/*  background-color: #fa2;*/
+/*  background-repeat: repeat-x;
   background-image: -khtml-gradient(linear,left top,left bottom,from(#ffec46),to(#f09600));
   background-image: -moz-linear-gradient(#ffec46,#f09600);
   background-image: -ms-linear-gradient(#ffec46,#f09600);
@@ -38,15 +39,15 @@ body{
   background-image: linear-gradient(#ffec46,#f09600);
   background-position: 0 0;
   border-color: #ed9200;
-  height: 610px!important;
+  height: 500px!important;*/
 }
 
 .home-main-banner-ph{
-  box-shadow: inset 0px 0px 30px #1b1b1b!important;
+/*  box-shadow: inset 0px 0px 30px #1b1b1b!important;*/
 }
 
 .hero-unit.home-main-banner-ph h2{
-  color: #8a9f13;
+  color: #333333;
 }
 
 .container-fluid{
