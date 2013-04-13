@@ -14,11 +14,7 @@ body{
     box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
 
-/*.alert{
-  width: 900px;
-  text-align: center;
-  margin-left: 150px;
-}*/
+
 
 .signup h3{
     color:#8a9f13;
@@ -28,23 +24,8 @@ body{
 .well {
     padding: 35px!important;
     background-color: #eeeeee;
-    /*  background-color: #fa2;*/
-    /*  background-repeat: repeat-x;
-      background-image: -khtml-gradient(linear,left top,left bottom,from(#ffec46),to(#f09600));
-      background-image: -moz-linear-gradient(#ffec46,#f09600);
-      background-image: -ms-linear-gradient(#ffec46,#f09600);
-      background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ffec46),color-stop(100%,#f09600));
-      background-image: -webkit-linear-gradient(#ffec46,#f09600);
-      background-image: -o-linear-gradient(#ffec46,#f09600);
-      background-image: linear-gradient(#ffec46,#f09600);
-      background-position: 0 0;
-      border-color: #ed9200;
-      height: 500px!important;*/
 }
 
-.home-main-banner-ph{
-    /*  box-shadow: inset 0px 0px 30px #1b1b1b!important;*/
-}
 
 .hero-unit.home-main-banner-ph h2{
     color: #333333;
@@ -52,71 +33,17 @@ body{
 
 .container-fluid-home{
     margin-top: 60px!important;
-    margin-bottom: 10px!important;
+/*    margin-bottom: 10px!important;*/
 }
 
-
-
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-    margin-bottom: 60px;
+.container-box-markeing-home{
+    height: 200px!important;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
-
-.carousel .container {
-    position: relative;
-    z-index: 9;
-}
-
-.carousel-control {
-    height: 80px;
-    margin-top: 0;
-    font-size: 120px;
-    text-shadow: 0 1px 1px rgba(0,0,0,.4);
-    background-color: transparent;
-    border: 0;
-    z-index: 10;
-}
-
-.carousel .item {
-    height: 500px;
-}
-.carousel img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 500px;
-}
-
-.carousel-caption {
-    background-color: transparent;
-    position: static;
-    max-width: 550px;
-    padding: 0 20px;
-    margin-top: 200px;
-}
-.carousel-caption h1,
-.carousel-caption .lead {
-    margin: 0;
-    line-height: 1.25;
-    color: #fff;
-    text-shadow: 0 1px 1px rgba(0,0,0,.4);
-}
-.carousel-caption .btn {
-    margin-top: 10px;
-}
-
-
-.carousel .item {
-    height: 500px;
-}
-.carousel img {
-    width: auto;
-    height: 500px;
-}
-
 

@@ -1,26 +1,21 @@
 .row-fluid
   .span9
-    .hero-unit.home-main-banner-ph
-      %h2 Create online surveys
-      %h2 FREE AND UNLIMITED
+    .hero-unit.home-main-banner-ph.container-box-markeing-home
+      %h2 Create online surveys  FREE AND UNLIMITED
       %p Easy
       %p Real time
       %p Flexible
-      %p Secure
       %a.btn.btn-primary.btn-large Learn more &raquo;
     .row-fluid
       .span4
         %h2 Easy
         %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      
       .span4
         %h2 Real Time
         %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      
       .span4
         %h2 Flexible
         %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      
   .span3
     .well.sidebar-nav
       .signup
@@ -34,7 +29,3 @@
         = f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :day, :year], label: false
         = f.input :gender, :collection => {'Male'=>'male', 'Female'=>'female'}, :as => :radio_buttons, :item_wrapper_class => 'inline', label: false
         = f.button :submit, "Register", :class => 'btn-primary pull-right'
-
-
-
-
