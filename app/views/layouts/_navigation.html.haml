@@ -1,14 +1,13 @@
-= link_to('Surface', root_path, class: 'brand')
-%div{class: 'nav-collapse collapse'}
+%a.brand{:href => "#"} Surface
+%div{class: 'nav-collapse'}
   %ul.nav
-    %li 
-      =link_to('Home', root_path, class: 'brand')
+    %li.active
+      =link_to('Home', root_path)
     %li
-      =link_to('About', root_path, class: 'brand')
+      =link_to('About', root_path)
     %li
-      =link_to('Contact', root_path, class: 'brand')
-
-
+      =link_to('Contact', root_path)
+- if session[:user_id].nil?
   :plain
     <form action="/login" class="simple_form navbar-form pull-right" method="get">
     <input class="string email required" id="user_email" name="user[email]" placeholder="User Email" size="50" type="email" />
@@ -16,4 +15,9 @@
     <input class="btn btn-primary" input_html="{:class=&gt;&quot;span2&quot;}" name="commit" type="submit" value="Login" />
     </form>
 
+- if !session[:user_id].nil?
+  %p.navbar-text.pull-right
+    Logged in as
+    %a{:href => "#"} #{@user.first_name}!
+  
 

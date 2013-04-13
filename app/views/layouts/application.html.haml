@@ -11,11 +11,12 @@
     = csrf_meta_tags
     = yield(:head)
   %body
-    %div{class: 'navbar navbar-inverse navbar-fixed-top'}
+    %div{class: 'navbar navbar-fixed-top'}
       %div.navbar-inner
-        .container
+        .container-fluid
           = render 'layouts/navigation'
+    
+    .container-fluid.container-fluid-home
       = render partial: 'layouts/messages', flash: flash
-    .container-fluid
       = yield
     %footer
