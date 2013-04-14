@@ -29,3 +29,4 @@
         = f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :day, :year], label: false
         = f.input :gender, :collection => {'Male'=>'male', 'Female'=>'female'}, :as => :radio_buttons, :item_wrapper_class => 'inline', label: false
         = f.button :submit, "Register", :class => 'btn-primary pull-right'
+          

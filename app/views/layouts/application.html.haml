@@ -7,7 +7,9 @@
     %meta{:content => "", :name => "author"}
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "bootstrap", :media => "all"
+    = stylesheet_link_tag "font-awesome", :media => "all"
     = javascript_include_tag "application"
+    = javascript_include_tag "bootstrap"
     = csrf_meta_tags
     = yield(:head)
   %body
@@ -15,7 +17,6 @@
       %div.navbar-inner
         .container-fluid
           = render 'layouts/navigation'
-    
     .container-fluid.container-fluid-home
       = render partial: 'layouts/messages', flash: flash
       = yield
