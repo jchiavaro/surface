@@ -7,8 +7,6 @@ gem 'rails', '3.2.9'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'cucumber-rails'
-  gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
