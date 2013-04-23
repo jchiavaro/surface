@@ -1,0 +1,8 @@
+development:
+  public: "localhost:3000"
+
+test:
+  public: "localhost:3000"
+
+production:
+  public: "serene-dawn-9316.herokuapp.com"

@@ -1,0 +1,27 @@
+production:
+  public: "http://serene-dawn-9316.herokuapp.com/"
+  private: "app.streamsend.com"
+  assets: "production-streamshare-ezpublishing.netdna-ssl.com"
+  streamsend: "app.streamsend.com"
+  accounts: "app.streamsendaccounts.com"
+
+staging:
+  public: "staging.streamshare.com"
+  private: "beta.streamsend.com"
+  assets: "staging-streamshare-ezpublishing.netdna-ssl.com"
+  streamsend: "beta.streamsend.com"
+  accounts: "staging.streamsendaccounts.com"
+
+development:
+  public: "dev.public.share.com:3000"
+  private: "dev.streamsendshare.com:3000"
+  assets: "dev.public.share.com:3000"
+  streamsend: "dev.streamsendshare.com:3001"
+  accounts: "dev.streamsendshare.com:3003"
+
+test:
+  public: "test.public.share.com:3000"
+  private: "test.streamsendshare.com:3000"
+  assets: "assets.streamsendshare.com:3000"
+  streamsend: "localhost:3001"
+  accounts: "accounts.streamsendshare.com:3003"
