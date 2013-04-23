@@ -12,8 +12,8 @@ class UsersController < ApplicationController
       flash[:notice] = "#{@user.first_name} was successfully created."
       redirect_to user_dashboard_path @user
     else
-      flash[:error] = "Error creating user"
-      redirect_to root_path
+      flash[:error] = "Error creating user: See the messages below"
+      render "home/index"
     end
   end
 
