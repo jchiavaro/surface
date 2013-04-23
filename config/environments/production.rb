@@ -65,11 +65,12 @@ SurfaceApp::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'http://serene-dawn-9316.herokuapp.com' }
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :user_name            => 'jchiavaro',
-    :password             => 'jorge812',
+    :user_name            => 'surfacenotifications',
+    :password             => '123Surface',
     :authentication       => 'plain',
     :enable_starttls_auto => true
   }
