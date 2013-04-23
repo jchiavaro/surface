@@ -51,7 +51,7 @@ describe UsersController do
         User.should_receive(:new).with(@invalid_user_attrs).and_return(@invalid_user)
         @invalid_user.should_receive(:save).and_return(nil)
         post :create, :user => @invalid_user_attrs
-        response.should redirect_to(root_path)
+        response.should render_template 'home/index'
       end
     end
 

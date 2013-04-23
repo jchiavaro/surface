@@ -8,7 +8,7 @@ describe UserMailer do
     it "should send a welcome email" do
       email = UserMailer.welcome_email(@user).deliver
       assert !ActionMailer::Base.deliveries.empty?
-      assert_equal ["notifications@surface.com"], email.from
+      assert_equal ["surfacenotifications@surface.com"], email.from
       assert_equal [@user.email], email.to
       assert_match /Welcome to Surface!, #{@user.first_name}/, email.encoded
       assert_equal "Welcome to Surface!", email.subject
