@@ -7,8 +7,6 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      mail = UserMailer.welcome_email(@user)
-      mail.deliver
       flash[:notice] = "#{@user.first_name} was successfully created."
       redirect_to user_dashboard_path @user
     else
