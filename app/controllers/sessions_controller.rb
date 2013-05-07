@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
       session[:user_id] = authorized_user.id
       @user = User.find session[:user_id]
       flash[:notice] = "Welcome again, you logged in as #{authorized_user.first_name + ' ' + authorized_user.last_name  }"
-      redirect_to user_dashboard_path @user
+      redirect_to dashboard_user_path @user
     else
       flash[:error] = "Invalid email or Password"
       redirect_to root_path

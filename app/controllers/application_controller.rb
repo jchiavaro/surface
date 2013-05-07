@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def save_login_state
     if session[:user_id]
       @user = User.find session[:user_id]
-      redirect_to user_dashboard_path  @user
+      redirect_to dashboard_user_path  @user
       return false
     else
       return true

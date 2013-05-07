@@ -20,7 +20,7 @@ describe SessionsController do
 
     it "should loging the user into the system" do
       get :login_attempt, :user => @user_attrs
-      response.should redirect_to(user_dashboard_path :id => @user.id)
+      response.should redirect_to(dashboard_user_path :id => @user.id)
     end
   end
 

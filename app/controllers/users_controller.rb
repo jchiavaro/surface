@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "#{@user.first_name} was successfully created."
-      redirect_to user_dashboard_path @user
+      redirect_to dashboard_user_path @user
     else
       flash[:error] = "Error creating user: See the messages below"
       render "home/index"

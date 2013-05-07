@@ -4,6 +4,6 @@ class UserMailer < ActionMailer::Base
   def welcome_email(user)
     @user = user
     @url  = "http://#{HOSTS_CONFIG["public"]}"
-    mail(to: user.email, subject: "Welcome to Surface!")
+    mail(to: @user.email, subject: "Welcome to Surface!")
   end
 end

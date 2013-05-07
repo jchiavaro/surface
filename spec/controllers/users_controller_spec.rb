@@ -21,7 +21,7 @@ describe UsersController do
     end
 
     it "should register the user" do
-      response.should redirect_to(user_dashboard_path @user)
+      response.should redirect_to(dashboard_user_path @user)
     end
 
     it "should make the user available for the next view" do
@@ -58,7 +58,7 @@ describe UsersController do
     it "if the user is logged in it should render dashboard" do
       session[:user_id] = @user.id
       post :create, :user => @user_attrs
-      response.should redirect_to(user_dashboard_path :id => @user.id)
+      response.should redirect_to(dashboard_user_path :id => @user.id)
     end
   end
 

@@ -1,9 +1,11 @@
 SurfaceApp::Application.routes.draw do
   root :to => "home#index"
-  resources :users
-    match 'users/:id/dashboard' => 'users#dashboard', :via => [:get], :as => :user_dashboard
-    match 'login' => 'sessions#login_attempt', :as => :login
-    match 'logout' => 'sessions#logout'
+  resources :users do
+    get 'dashboard', on: :member
+    get 'confirmation', on: :member
+  end
+  match 'login' => 'sessions#login_attempt', :as => :login
+  match 'logout' => 'sessions#logout'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
