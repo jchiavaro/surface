@@ -12,6 +12,8 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:password_digest) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:confirmed_at) }
+  it { should respond_to(:auth_code) }
   it { should be_valid }
 
   describe "when password is not present" do
@@ -37,8 +39,8 @@ describe User do
       password: "some_pass",
       password_confirmation: "some_pass",
       birthday: "1987-12-21",
-      gender: "Male"}
-    }
+      gender: "Male",
+      confirmed_at: nil}}
 
     it "should create a new user" do
       user = User.create!(user_attrs)
@@ -83,6 +85,15 @@ describe User do
           another_user.email = user.email.upcase
           another_user.save
           another_user.should_not be_valid
+        end
+      end
+    end
+    context "after user registration" do
+      describe "after save" do
+        it "should send a confirmation email" do
+          user = User.new(user_attrs)
+          user.should_receive(:send_welcome_email)
+          user.save
         end
       end
     end

@@ -1,0 +1,10 @@
+%h3 Free instant signup
+= simple_form_for(User.new, url: users_path) do |f|
+  = f.input :first_name, label: false, :placeholder => 'First Name'
+  = f.input :last_name, :placeholder => 'Last Name', label: false
+  = f.input :email, :placeholder=> 'Email', label: false
+  = f.input :password, :placeholder => 'Password',label: false
+  = f.input :password_confirmation, :placeholder => 'Confirmation',  label: false
+  = f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :day, :year], label: false
+  = f.input :gender, :collection => {'Male'=>'male', 'Female'=>'female'}, :as => :radio_buttons, :item_wrapper_class => 'inline', label: false
+  = f.button :submit, "Register", :class => 'btn-primary pull-right'

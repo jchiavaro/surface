@@ -14,7 +14,6 @@ describe UsersController do
         "gender" =>"Male"
       }
       @user = mock('User', @user_attrs)
-      @mail_message = mock('Mail::Message', {to: "dd@domain.com"})
       User.should_receive(:new).with(@user_attrs).and_return(@user)
       @user.should_receive(:save).and_return(@user)
       post :create, :user => @user_attrs
@@ -30,11 +29,6 @@ describe UsersController do
 
     it "should save the user id in the session" do
       session[:user_id].should eq(@user.id)
-    end
-
-    it "should send a welcome email" do
-      welcome_email = ActionMailer::Base.deliveries.last
-      assert_equal @user.email, welcome_email.to[0]
     end
 
     describe "invalid user" do
