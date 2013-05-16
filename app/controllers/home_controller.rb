@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
-  before_filter :save_login_state, :only => [:index]
+  include SessionsHelper
+
   def index
+    redirect_to dashboard_user_path(current_user) if signed_in?
   end
 end

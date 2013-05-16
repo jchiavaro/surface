@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
-
-  before_filter :authenticate_user, :only => [:dashboard]
-  before_filter :save_login_state, :only => [:create]
+  include SessionsHelper
 
   def create
     @user = User.new(params[:user])
     if @user.save
-      session[:user_id] = @user.id
+      sign_in @user
       flash[:notice] = "#{@user.first_name} was successfully created."
       redirect_to dashboard_user_path @user
     else
@@ -17,5 +15,17 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = User.find(params[:id])
+    redirect_to root_path if !signed_in?
+  end
+
+  def confirm_account
+    @user = User.where({auth_code: params[:auth_code]}).first
+    if @user && !@user.expired?
+      @user.update_attribute(:active, true)
+      sign_in @user
+      redirect_to dashboard_user_path @user
+    else
+      redirect_to root_path
+    end
   end
 end

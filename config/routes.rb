@@ -2,10 +2,11 @@ SurfaceApp::Application.routes.draw do
   root :to => "home#index"
   resources :users do
     get 'dashboard', on: :member
-    get 'confirmation', on: :member
+    get 'account/:auth_code', to: 'users#confirm_account', on: :member
   end
   match 'login' => 'sessions#login_attempt', :as => :login
   match 'logout' => 'sessions#logout'
+  #match '/users/:id/account/:auth_code' => 'users#confirm_account'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

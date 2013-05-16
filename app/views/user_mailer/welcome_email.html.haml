@@ -1,7 +1,10 @@
 %body
-  %h1 Welcome to Surface!, #{@user.first_name}
+  %h2 Welcome to Surface!, #{@user.first_name}
   %p You have successfully signed up to Surface.
   %p Your username is #{@user.email}
-  %p To login to the site, please follow this link:
-  = @url
+  %p To activate your account, simply click on the link below or paste into the url field on your favorite browser:
+  %a(href=@confirm_account_url) Confirm Account
+  %p The activation link will only be good for 2 days, after that you will have to try again from the beginning.
   %p Thanks for joining us!
+  %br
+  %p The Surface Team.

@@ -1,10 +1,6 @@
-
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
 describe SessionsController do
-  before(:each) do
-    @sessions_controller = SessionsController.new
-  end
 
   describe "GET 'login with an existing user'" do
     before do
@@ -13,7 +9,8 @@ describe SessionsController do
         "first_name"=> "some",
         "last_name"=> "admin",
         "email" =>"admin@admin.com",
-        "password" =>"administrator"
+        "password" =>"administrator",
+        active: true
       }
       @user = mock('User', @user_attrs)
     end
@@ -37,9 +34,16 @@ describe SessionsController do
     end
 
     it "should not loging the user into the system and redirect to the root_path" do
-      get :login_attempt, :user => @user_attrs      
+      get :login_attempt, :user => @user_attrs
       response.should redirect_to(root_path)
-      flash[:error].should match /Invalid email or Password/
+      flash[:error].should_not be_nil
+    end
+  end
+
+  describe "#logout" do
+    it "should remove the user from the session" do
+      get :logout
+      session[:user_id].should be_nil
     end
   end
 end

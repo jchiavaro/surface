@@ -44,34 +44,73 @@ describe UsersController do
         session[:user_id] = nil
         User.should_receive(:new).with(@invalid_user_attrs).and_return(@invalid_user)
         @invalid_user.should_receive(:save).and_return(nil)
-        post :create, :user => @invalid_user_attrs
+        post :create, user: @invalid_user_attrs
         response.should render_template 'home/index'
       end
-    end
-
-    it "if the user is logged in it should render dashboard" do
-      session[:user_id] = @user.id
-      post :create, :user => @user_attrs
-      response.should redirect_to(dashboard_user_path :id => @user.id)
     end
   end
 
   describe "#dashboard" do
+    before do
+      @user = mock('User', :id => '1')
+      User.stub(:find).with(@user.id).and_return(@user)
+    end
+    context "the user is logged in" do
+      it "should redirect the user to the dashboard" do
+        session[:user_id] = @user.id
+        get :dashboard, :id => @user.id
+        response.should render_template 'users/dashboard'
+      end
+    end
+    context "the user is not logged in" do
+      it "should redirect the user to the home page" do
+        session[:user_id] = nil
+        get :dashboard, :id => @user.id
+        response.should redirect_to(root_path)
+      end
+    end
+  end
 
-    it "if user is not logged in it should render root" do
-      user = mock('User', :id => '1')
-      User.stub(:find).with(user.id).and_return(user)
-      session[:user_id] = nil
-      get :dashboard, :id => user.id
-      response.should redirect_to(root_path)
+  describe "#confirm_account" do
+    before do
+      @user_attrs = {
+        "id" =>  "1",
+        "first_name"=> "juan",
+        "last_name"=> "smith",
+        "email" =>"js@domain.com",
+        "password" =>"some_pass",
+        "confirmation_password"=> "some_pass",
+        "birthday" =>"1987-12-21",
+        "gender" =>"Male",
+        "auth_code" => "super_secret",
+        "active" => nil
+      }
+      @user = mock('User', @user_attrs)
+      User.stub_chain(:where, :first).and_return(@user)
     end
 
-    it "if user is logged in it should render the user dashboard" do
-      user = mock('User', :id => '1')
-      User.stub(:find).with(user.id).and_return(user)
-      session[:user_id] = user.id
-      get :dashboard, :id => user.id
-      response.should render_template("dashboard")
+    context "with a valid auth code" do
+      before do
+        @user.should_receive(:expired?).and_return false
+        @user.should_receive(:update_attribute).with(:active, true).and_return true
+        get :confirm_account, id: @user.id, auth_code: @user.auth_code
+      end
+      xit "should activate the user" do
+        @user.active.should be_true
+      end
+      it "should confirm the user account" do
+        response.should redirect_to(dashboard_user_path @user)
+      end
+      it "should save the user into the session" do
+        session[:user_id].should == @user.id
+      end
+    end
+    context "with an invalid auth code" do
+      it "should redirect the user to the home page" do
+        @user.should_receive(:expired?).and_return true
+        get :confirm_account, id: @user.id, auth_code: @user.auth_code
+        response.should redirect_to(root_path)
+      end
     end
   end
 end
