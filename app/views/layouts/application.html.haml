@@ -14,13 +14,13 @@
     = yield(:head)
   %body
     .wrapper
-      %div{class: 'navbar navbar-fixed-top'}
+      %div{class: 'navbar navbar-fixed-top navbar-inverse'}
         %div.navbar-inner
           .container-fluid
             = render 'layouts/navigation'
       .container-fluid.container-fluid-home
         = render partial: 'layouts/messages', flash: flash
-        = yield
+        = controller.sub_layout ? (render :partial => "/layouts/#{controller.sub_layout}") : yield
       .push
     %footer.footer
       = render 'layouts/footer'

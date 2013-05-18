@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   include SessionsHelper
 
+  def sub_layout
+    "board"
+  end
+
   def create
     @user = User.new(params[:user])
     if @user.save

@@ -1,4 +1,7 @@
 SurfaceApp::Application.routes.draw do
+  resources :contacts_lists
+
+
   root :to => "home#index"
   resources :users do
     get 'dashboard', on: :member

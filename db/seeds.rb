@@ -8,3 +8,7 @@
 
 User.create!(first_name: 'admin', last_name: 'admin', email: 'admin@admin.com', password: 'administrator', password_confirmation: 'administrator',birthday: '2011-09-19
   ', gender: 'male', active: true);
+
+ContactsList.create!(name: "Friends", description: "desc1");
+ContactsList.create!(name: "Family", description: "desc2");
+ContactsList.create!(name: "Work contacts", description: "desc3");
