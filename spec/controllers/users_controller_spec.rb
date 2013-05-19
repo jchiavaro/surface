@@ -19,16 +19,12 @@ describe UsersController do
       post :create, :user => @user_attrs
     end
 
-    it "should register the user" do
-      response.should redirect_to(dashboard_user_path @user)
+    it "should redirect to the account confirmation" do
+      response.should redirect_to confirmation_user_path @user
     end
 
     it "should make the user available for the next view" do
       assigns(:user).should eq(@user)
-    end
-
-    it "should save the user id in the session" do
-      session[:user_id].should eq(@user.id)
     end
 
     describe "invalid user" do
@@ -39,13 +35,18 @@ describe UsersController do
           "confirmation_password" => "1234"
         }
         @invalid_user = mock('User', @invalid_user_attrs)
-      end
-      it "should not create the user" do
         session[:user_id] = nil
         User.should_receive(:new).with(@invalid_user_attrs).and_return(@invalid_user)
         @invalid_user.should_receive(:save).and_return(nil)
         post :create, user: @invalid_user_attrs
+
+      end
+      it "should not create the user" do
         response.should render_template 'home/index'
+      end
+
+      it "should show an error message" do
+        flash[:error].should_not be_blank
       end
     end
   end
@@ -82,8 +83,7 @@ describe UsersController do
         "confirmation_password"=> "some_pass",
         "birthday" =>"1987-12-21",
         "gender" =>"Male",
-        "auth_code" => "super_secret",
-        "active" => nil
+        "auth_code" => "super_secret"
       }
       @user = mock('User', @user_attrs)
       User.stub_chain(:where, :first).and_return(@user)
@@ -94,9 +94,6 @@ describe UsersController do
         @user.should_receive(:expired?).and_return false
         @user.should_receive(:update_attribute).with(:active, true).and_return true
         get :confirm_account, id: @user.id, auth_code: @user.auth_code
-      end
-      xit "should activate the user" do
-        @user.active.should be_true
       end
       it "should confirm the user account" do
         response.should redirect_to(dashboard_user_path @user)

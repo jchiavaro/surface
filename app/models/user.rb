@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   scope :actives, -> {where(active: true)}
 
   def expired?
-    true if Time.now < expires_at
+    true if Time.now > expires_at
   end
 
   private

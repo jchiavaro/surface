@@ -8,9 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      sign_in @user
       flash[:notice] = "#{@user.first_name} was successfully created."
-      redirect_to dashboard_user_path @user
+      redirect_to confirmation_user_path @user
     else
       flash[:error] = "Error creating user: See the messages below"
       render "home/index"

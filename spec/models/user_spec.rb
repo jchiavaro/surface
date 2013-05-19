@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe User do
   before do
-    @user = User.new({first_name: "Example User", last_name: "Last Name",  email: "user@example.com", password: "foobar", password_confirmation: "foobar", birthday: "1982-12-18", gender: "Female", expires_at: Time.now + 4.days})
+    @user = User.new({first_name: "Example User", last_name: "Last Name",  email: "user@example.com", password: "foobar", password_confirmation: "foobar", birthday: "1982-12-18", gender: "Female", expires_at: Time.now + 2.days})
   end
 
   subject { @user }
@@ -36,12 +36,12 @@ describe User do
   describe "#expired" do
     describe "when auth code has expired" do
       it "should return true" do
+        @user.expires_at = Time.now - 2.days
         @user.should be_expired
       end
     end
     describe "with a valid auth code" do
       it "should return false" do
-        @user.expires_at = Time.now - 2.days
         @user.should_not be_expired
       end
     end

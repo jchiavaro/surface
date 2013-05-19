@@ -6,6 +6,7 @@ SurfaceApp::Application.routes.draw do
   resources :users do
     get 'dashboard', on: :member
     get 'account/:auth_code', to: 'users#confirm_account', on: :member
+    get 'confirmation', on: :member
   end
   match 'login' => 'sessions#login_attempt', :as => :login
   match 'logout' => 'sessions#logout'

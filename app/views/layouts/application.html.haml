@@ -20,7 +20,9 @@
             = render 'layouts/navigation'
       .container-fluid.container-fluid-home
         = render partial: 'layouts/messages', flash: flash
-        = controller.sub_layout ? (render :partial => "/layouts/#{controller.sub_layout}") : yield
+        - if signed_in?
+          = controller.sub_layout ? (render :partial => "/layouts/#{controller.sub_layout}") : yield
       .push
+        = yield
     %footer.footer
       = render 'layouts/footer'
