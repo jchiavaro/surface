@@ -42,7 +42,7 @@ describe UsersController do
 
       end
       it "should not create the user" do
-        response.should render_template 'home/index'
+        response.should render_template 'index'
       end
 
       it "should show an error message" do

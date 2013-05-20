@@ -2,7 +2,7 @@ SurfaceApp::Application.routes.draw do
   resources :contacts_lists
 
 
-  root :to => "home#index"
+  root :to => "users#index"
   resources :users do
     get 'dashboard', on: :member
     get 'account/:auth_code', to: 'users#confirm_account', on: :member

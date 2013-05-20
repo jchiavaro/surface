@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     "board"
   end
 
+  def index
+    @user ||= User.new
+    redirect_to dashboard_user_path(current_user) if signed_in?
+  end
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -12,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to confirmation_user_path @user
     else
       flash[:error] = "Error creating user: See the messages below"
-      render "home/index"
+      render "index"
     end
   end
 
