@@ -24,7 +24,8 @@ class UsersController < ApplicationController
   def confirm_account
     @user = User.where({auth_code: params[:auth_code]}).first
     if @user && !@user.expired?
-      @user.update_attribute(:active, true)
+      #update_column will skip validations and callbacks
+      @user.update_column(:active, true)
       sign_in @user
       redirect_to dashboard_user_path @user
     else

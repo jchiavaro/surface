@@ -92,7 +92,7 @@ describe UsersController do
     context "with a valid auth code" do
       before do
         @user.should_receive(:expired?).and_return false
-        @user.should_receive(:update_attribute).with(:active, true).and_return true
+        @user.should_receive(:update_column).with(:active, true).and_return true
         get :confirm_account, id: @user.id, auth_code: @user.auth_code
       end
       it "should confirm the user account" do
