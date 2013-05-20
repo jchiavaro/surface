@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :contacts_list, :dependent => :destroy
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :birthday, :gender, :expires_at, :active
   validates :first_name, :last_name, :email, :password, :password_confirmation, :birthday, :gender, presence: true
   validates :password, presence: true, length: { minimum: 6 }
