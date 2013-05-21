@@ -10,7 +10,7 @@
       =link_to('Contact', root_path)
 - if !signed_in?
   :plain
-    <form action="/login" class="simple_form navbar-form pull-right" method="get">
+    <form id="signin_form"  action="/login" class="simple_form navbar-form pull-right" method="get">
        <div class="input-prepend">
          <span class="add-on"><i class="icon-envelope"></i></span>
          <input class="string email required" id="user_email" name="user[email]" placeholder="User Email" size="50" type="email" />

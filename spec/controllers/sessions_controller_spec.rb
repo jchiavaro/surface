@@ -2,6 +2,25 @@ require 'spec_helper'
 
 describe SessionsController do
 
+  describe "#login_attempt" do
+    before do
+      @user_attrs = {
+        "id" => "1",
+        "first_name"=> "some",
+        "last_name"=> "admin",
+        "email" =>"jc@admin.com",
+        "password" =>"administrator",
+        active: false
+      }
+      @user = mock('User', @user_attrs)
+    end
+
+    it "should not login the user" do
+      get :login_attempt, :user => @user_attrs
+      response.should redirect_to(root_path)
+    end
+  end
+
   describe "GET 'login with an existing user'" do
     before do
       @user_attrs = {
@@ -9,8 +28,7 @@ describe SessionsController do
         "first_name"=> "some",
         "last_name"=> "admin",
         "email" =>"admin@admin.com",
-        "password" =>"administrator",
-        active: true
+        "password" =>"administrator"
       }
       @user = mock('User', @user_attrs)
     end

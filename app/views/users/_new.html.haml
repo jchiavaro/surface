@@ -1,5 +1,5 @@
 %h3 Free instant signup
-= simple_form_for(User.new, url: users_path) do |f|
+= simple_form_for(@user, url: users_path) do |f|
   = f.input :first_name, label: false, :placeholder => 'First Name'
   = f.input :last_name, :placeholder => 'Last Name', label: false
   = f.input :email, :placeholder=> 'Email', label: false
