@@ -7,8 +7,12 @@ class ContactsListsController < ApplicationController
 
   # GET /contacts_lists
   def index
-    @contacts_lists = ContactsList.where(:user_id => current_user.id)
-    render 'index' if signed_in?
+    if signed_in?
+      @contacts_lists = ContactsList.where(:user_id => current_user.id)
+      render 'index'
+    else
+      redirect_to root_path
+    end
   end
 
 end
