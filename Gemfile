@@ -51,3 +51,4 @@ gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem "font-awesome-rails"
+gem 'shoulda'
