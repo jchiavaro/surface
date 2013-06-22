@@ -1,20 +1,22 @@
 .emailList(align="left")
-  .emailList
+  #div
     %label Select your e-mail list:
     = select_tag "contacts", options_from_collection_for_select(@contacts_lists, "id", "name") , { :class => 'contact-list-select' }
-    %button( name="add" class="btn btn-info" type="submit" id="add" value="Add")
+    %a(class="btn btn-info" id="add" href="/contacts_lists/new" data-remote='true'  )
       %i.icon-plus Add
-    %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
-      %i.icon-pencil Edit
-    %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
-      %i.icon-trash Delete
+    %a(class="btn btn-info" id="edit" data-remote='true' )
+      %i.icon-plus Edit
+    %a(class="btn btn-info" id="delete" data-remote='true' )
+      %i.icon-plus Delete
+    
+   
 
   %label Participants
   %button( name="add" class="btn btn-info" type="submit" id="add" value="Add")
     %i.icon-plus Add
   %br
   %br
-  %div
+  %contacts-list-table
     %table( class="table table-striped table-bordered ")
       %th First Name
       %th Last Name
@@ -28,9 +30,9 @@
         %td es pelucon!
         %td(style="overflow:auto;")
           %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
-            %i.icon-pencil 
+            %i.icon-pencil
           %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
-            %i.icon-trash 
+            %i.icon-trash
       %tr
         %td Matias
         %td beade
@@ -40,7 +42,7 @@
           %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
             %i.icon-pencil
           %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
-            %i.icon-trash 
+            %i.icon-trash
       %tr
         %td Matias
         %td beade
@@ -48,8 +50,26 @@
         %td es pelucon!
         %td(style="overflow:auto;")
           %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
-            %i.icon-pencil 
+            %i.icon-pencil
           %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
-            %i.icon-trash 
-          
- 
+            %i.icon-trash
+
+
+
+  
+
+:javascript
+  //Edit
+  $('#edit').on('click', function(){
+    var selected = $('#contacts option:selected').val();
+    $('#edit').attr('href', '/contacts_lists/'+selected+'/edit');
+  });
+
+
+  //Delete
+  $('#delete').on('click', function(){
+
+    var selected = $('#contacts option:selected').val();
+    $('#delete').attr('href', '/contacts_lists/'+selected+'/delete');  
+    
+  });

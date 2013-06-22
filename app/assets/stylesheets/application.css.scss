@@ -1,4 +1,6 @@
+@import "bootstrap";
 @import "font-awesome";
+
 
 body{
   background: #fff url(bg2.jpg) repeat top left;
@@ -80,7 +82,7 @@ html, body {
   text-align: center;
 }
 
-/*Contact list page */
+/*Contact list page MOVE IT */
 
 .contact-list-select{
   margin-top: 10px;
@@ -100,6 +102,52 @@ html, body {
 .center-img{
   padding: 30px 0;
   text-align: center;
+}
+
+
+.popup-window {
+  -moz-border-radius: 2px;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+  border: 1px solid #536376;
+  -webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;
+  -moz-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;
+  padding: 14px 22px;
+  position: relative;
+  display: none;
+}
+.popup-window h5{
+  border-bottom: 1px solid #005580;
+}
+
+
+#close_x {
+  cursor: pointer;
+  width: 15px;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-position: -387px -102px;
+  text-decoration: none;
+}
+
+.help-inline-contacts-list {
+  color: #b94a48;
+  display: block;
+  vertical-align: middle;
+  padding-left: 5px;
+
+}
+
+#newcl textarea {
+  width: 532px;
+}
+
+#cancel_button
+{
+  margin-right: 6px;
 }
 
 

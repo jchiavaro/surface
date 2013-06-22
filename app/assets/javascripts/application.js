@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+//= require jquery-migrate-1.2.1.min
+//= require jquery.lightbox_me
+
+

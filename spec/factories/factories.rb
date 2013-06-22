@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :contacts_list do |f|
+    f.user  {FactoryGirl.create(:user)}
     f.name "Friends "
     f.description "some description"
   end
