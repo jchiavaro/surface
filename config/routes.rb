@@ -1,6 +1,7 @@
 SurfaceApp::Application.routes.draw do
   resources :contacts_lists do
     get 'delete', to: 'contacts_lists#delete', on: :member
+    get 'load_contacts', to:  'contacts_lists#load_contacts', on: :member
   end
 
 

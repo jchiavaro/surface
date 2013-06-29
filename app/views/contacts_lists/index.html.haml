@@ -1,7 +1,7 @@
 .emailList(align="left")
   #div
     %label Select your e-mail list:
-    = select_tag "contacts", options_from_collection_for_select(@contacts_lists, "id", "name") , { :class => 'contact-list-select' }
+    = select_tag "contacts", options_from_collection_for_select(@contacts_lists, "id", "name"), {:prompt => 'Select' , :class => 'contact-list-select' }
     %a(class="btn btn-info" id="add" href="/contacts_lists/new" data-remote='true'  )
       %i.icon-plus &nbsp;Add
     %a(class="btn btn-info" id="edit" data-remote='true' )
@@ -16,43 +16,15 @@
     %i.icon-plus &nbsp;Add
   %br
   %br
-  %contacts-list-table
-    %table( class="table table-bordered ")
-      %th First Name
-      %th Last Name
-      %th E-mail address
-      %th Comments
-      %th Actions
-      %tr
-        %td Matias
-        %td beade
-        %td matiasbad@gmail.com
-        %td es pelucon!
-        %td(style="overflow:auto;")
-          %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
-            %i.icon-pencil
-          %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
-            %i.icon-trash
-      %tr
-        %td Matias
-        %td beade
-        %td matiasbad@gmail.com
-        %td es pelucon!
-        %td(style="overflow:auto;")
-          %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
-            %i.icon-pencil
-          %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
-            %i.icon-trash
-      %tr
-        %td Matias
-        %td beade
-        %td matiasbad@gmail.com
-        %td es pelucon!
-        %td(style="overflow:auto;")
-          %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
-            %i.icon-pencil
-          %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
-            %i.icon-trash
+  #contacts-list-table
+  %table( class="table table-bordered ")
+    %th First Name
+    %th Last Name
+    %th E-mail address
+    %th Comments
+    %th Actions
+    %tbody#contact_list
+   
 
 
 
@@ -62,14 +34,29 @@
   //Edit
   $('#edit').on('click', function(){
     var selected = $('#contacts option:selected').val();
+    if(!(selected === '')){
     $('#edit').attr('href', '/contacts_lists/'+selected+'/edit');
+    }
   });
 
 
   //Delete
   $('#delete').on('click', function(){
-
     var selected = $('#contacts option:selected').val();
-    $('#delete').attr('href', '/contacts_lists/'+selected+'/delete');  
     
+    if(!(selected === '')){
+    $('#delete').attr('href', '/contacts_lists/'+selected+'/delete');
+    }
+    
+  });
+
+  // loas contacts for the list
+  $('#contacts').change(function(){
+     var selected = $('#contacts option:selected').val();
+     if(!(selected === '')){
+     $.ajax({
+        url: '/contacts_lists/'+selected+'/load_contacts',
+        type: "GET"
+      })
+      }
   });

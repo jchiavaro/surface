@@ -1,0 +1,16 @@
+- if @cl.contact.any?
+  - @cl.contact.each do |c|
+    %tr
+      %td #{c.first_name}
+      %td #{c.last_name}
+      %td #{c.email}
+      %td #{c.comments}
+      %td(style="overflow:auto;")
+        %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
+          %i.icon-pencil
+        %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
+          %i.icon-trash
+- else
+  %tr
+    %td(colspan="5")
+      %span No results
