@@ -1,0 +1,18 @@
+// Remove if exist
+$('#new-contact').remove();
+
+// Render '_new' view
+- window_title = @c.id.nil? ? 'New Contact' : 'Edit Contact'
+- content = escape_javascript(render('new'))
+
+// Append rendered content to the body
+$('body').append("#{content}");
+
+// Add popup-window class
+$('#new-contact').addClass('popup-window');
+
+//Add title
+$('#new-contact h5').text("#{window_title}");
+
+// lightbox the window
+$('#new-contact').lightbox_me({centered: true});

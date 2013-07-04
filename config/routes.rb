@@ -1,9 +1,10 @@
 SurfaceApp::Application.routes.draw do
+  
   resources :contacts_lists do
     get 'delete', to: 'contacts_lists#delete', on: :member
-    get 'load_contacts', to:  'contacts_lists#load_contacts', on: :member
+    get 'load_contacts', to:  'contacts#load_contacts', on: :member
   end
-
+  
 
   root :to => "users#index"
   resources :users do
@@ -13,6 +14,14 @@ SurfaceApp::Application.routes.draw do
   end
   match 'login' => 'sessions#login_attempt', :as => :login
   match 'logout' => 'sessions#logout'
+
+  resources :contacts do
+
+  end
+
+
+
+
   #match '/users/:id/account/:auth_code' => 'users#confirm_account'
   # The priority is based upon order of creation:
   # first created -> highest priority.

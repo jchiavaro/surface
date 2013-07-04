@@ -3,180 +3,243 @@
 
 
 body{
-  background: #fff url(a9.png) repeat top left;
+    background: #fff url(body-bg.png) repeat top left;
 }
 
 .content {
-  margin-top: 20px;
-  background-color: #eee;
-  padding: 20px;
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    margin-top: 20px;
+    background-color: #eee;
+    padding: 20px;
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
 
 .signup h3{
-  color: #fff;;
-  text-align: center;
-  text-shadow: 0 2px 0 #0044cc;
-  line-height: .9em;
-  font-family: 'Oleo Script';
+    color: #fff;;
+    text-align: center;
+    text-shadow: 0 2px 0 #0044cc;
+    line-height: .9em;
+    font-family: 'Oleo Script';
 }
 
 .well {
-  padding-bottom: 30px;
-  padding-left: 30px;
-  background: url(a2.jpg)
+    padding-bottom: 30px;
+    padding-left: 40px;
+    
+    background: url(a2.png)
 }
 
+
+.add-on{
+    color: #110e0e!important;
+}
 .hero-unit.home-main-banner-ph h2{
-  color: white;
-  text-shadow: -1px 0 #333333, 0 1px #333333, 1px 0 #333333, 0 -1px #333333;
+    color: white;
+    text-shadow: -1px 0 #333333, 0 1px #333333, 1px 0 #333333, 0 -1px #333333;
 }
 
 .container-fluid-home{
-  margin-top: 60px!important;
+    margin-top: 60px!important;
 }
 
 .container-box-markeing-home{
-  background-image: url(surv.jpg);
-  background-size:100% 100%;
-  color: white;
-  height: 200px!important;
-  border: 1px solid #e3e3e3;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    background-image: url(surv.jpg);
+    background-size:100% 100%;
+    color: white;
+    height: 200px!important;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .input-prepend {
-  margin-bottom: 0px!important;
+    margin-bottom: 0px!important;
 }
 
 * {
-  margin: 0;
+    margin: 0;
 }
 
 html, body {
-  height: 100%;
-  color: white;
+    height: 100%;
+    color: white;
 }
 
 .wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -4em;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
 }
 
 .footer, .push {
-  height: 4em;
+    height: 4em;
 }
 
 .footer{
-  /*  background-color: #333333;*/
-  background: url(a2.jpg);
-  border-top: 1px solid #e3e3e3;
+    /*  background-color: #333333;*/
+    background: url(a2.jpg);
+    border-top: 1px solid #e3e3e3;
 }
 
 .footer p{    
-  padding-top: 20px;
-  color: #999999;
-  text-align: center;
+    padding-top: 20px;
+    color: #999999;
+    text-align: center;
 }
 
 /*Contact list page MOVE IT */
 
 .contact-list-select{
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 
 /*Dashboard/take a tour page*/
 .title-Oleo-h1{
-  padding-left: 300px;
-  padding-top: 200px;
-  text-align: center;
-  font-size: 55px;
-  overflow: hidden;
-  line-height: .9em;
-  font-family: 'Oleo Script';
+    padding-left: 300px;
+    padding-top: 200px;
+    text-align: center;
+    font-size: 55px;
+    overflow: hidden;
+    line-height: .9em;
+    font-family: 'Oleo Script';
 }
 
 .center-img{
-  position: absolute;
-  top: 130px;
-  left: 5px;
-  /*  padding: 30px 0;*/
-  /*  text-align: center;*/
+    position: absolute;
+    top: 130px;
+    left: 5px;
+    /*  padding: 30px 0;*/
+    /*  text-align: center;*/
 }
 
 
 .popup-window {
-  color: #999999;
-  -moz-border-radius: 2px;
-  background-color: #eeeeee;
-  -webkit-border-radius: 6px;
-  border: 1px solid #536376;
-  -webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;
-  -moz-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;
-  padding: 14px 22px;
-  position: relative;
-  display: none;
+    color: #999999;
+    -moz-border-radius: 2px;
+    background-color: #eeeeee;
+    -webkit-border-radius: 6px;
+    border: 1px solid #536376;
+    -webkit-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;
+    -moz-box-shadow: rgba(0,0,0,.6) 0px 2px 12px;
+    padding: 14px 22px;
+    position: relative;
+    display: none;
 }
 .popup-window h5{
-  border-bottom: 1px solid #005580;
-  color: #333333;
+    border-bottom: 1px solid #005580;
+    color: #333333;
 }
 
 
 #close_x {
-  cursor: pointer;
-  width: 15px;
-  overflow: hidden;
-  display: block;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background-position: -387px -102px;
-  text-decoration: none;
+    cursor: pointer;
+    width: 15px;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-position: -387px -102px;
+    text-decoration: none;
 }
 
 .help-inline-contacts-list {
-  color: #b94a48;
-  display: block;
-  vertical-align: middle;
-  padding-left: 5px;
+    color: #b94a48;
+    display: block;
+    vertical-align: middle;
+    padding-left: 5px;
 
 }
 
 #newcl textarea {
-  width: 532px;
+    width: 532px;
 }
 
 #cancel_button
 {
-  margin-right: 6px;
+    margin-right: 6px;
 }
 
 
 .emailList table th {
-  color: white;
+    color: white;
 
 }
 .emailList table{
-  color: #999999;
-  background-color: #333333;
+    color: #999999;
+    background-color: #333333;
 }
 
 .emailList select {
-  color: #999999;
-  background-color: #333333;
-  border: 1px solid white;
+    color: #999999;
+    background-color: #333333;
+    border: 1px solid white;
+}
+
+.gradientBoxesWithOuterShadows {
+    color: #005580;
+    height: 200px;
+    width: 400px;
+    padding: 20px;
+/*    background-color: white;*/
+
+    /* outer shadows  (note the rgba is red, green, blue, alpha) */
+    -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+
+    /* rounded corners */
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+
+    background: url(bg.png);
+
+    /* gradients */
+/*    background: -webkit-gradient(linear, left top, left bottom,
+        color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5));*/
+/*    background: -moz-linear-gradient(top, white 0%, white 55%, #D5E4F3 130%);*/
+}
+
+.gradientBoxesWithOuterShadows h5{
+    border-bottom: 1px solid #999999;
+}
+
+.p1{
+    position: absolute;
+    top: 95px;
+    left: 10px;
+}
+
+.p2{
+    position: absolute;
+    top: 95px;
+    left: 500px;
+}
+
+.p3{
+    position: absolute;
+    top: 350px;
+    left: 10px;
+}
+
+.p4{
+    position: absolute;
+    top: 350px;
+    left: 500px;
+}
+
+.logo-dashboard{
+    position: absolute;
+    top: 40px;
+    left: 150px;
 }

@@ -12,7 +12,7 @@
    
 
   %label Participants
-  %button( name="add" class="btn btn-info" type="submit" id="add" value="Add")
+  %a(class="btn btn-info" id="add-contact" data-remote='true'  )
     %i.icon-plus &nbsp;Add
   %br
   %br
@@ -50,7 +50,7 @@
     
   });
 
-  // loas contacts for the list
+  // load contacts for the list
   $('#contacts').change(function(){
      var selected = $('#contacts option:selected').val();
      if(!(selected === '')){
@@ -60,3 +60,16 @@
       })
       }
   });
+
+
+  //show add contact modal
+  $('#add-contact').on('click', function(){  
+     var selected = $('#contacts option:selected').val();
+     if(!(selected === '')){
+       $.ajax({
+        url: '/contacts/new',
+        data: {cl_id: selected},
+        type: "GET"
+      })
+      }
+   });

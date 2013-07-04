@@ -1,0 +1,10 @@
+= simple_form_for(@c, :remote => true) do |f|
+  = f.input :first_name, label: false, :placeholder => 'First Name', :input_html => { :class=>"input-xxlarge"}
+  = f.input :last_name, label: false, :placeholder => 'Last Name', :input_html => { :class=>"input-xxlarge"}
+  = f.input :email, :placeholder=> 'Email', label: false
+  = f.input :comments,  :as => :text ,label: false, :placeholder => 'Comments',  :input_html => { :cols => 3, :rows => 5 }
+  = f.button :submit, "Save", :class => 'btn-primary pull-right'
+  %a(id="cancel_button" class='btn btn-primary pull-right' onclick="$(this).trigger('close')") Cancel
+
+
+

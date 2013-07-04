@@ -80,12 +80,5 @@ class ContactsListsController < ApplicationController
   end
 
 
-  # GET /contacts_lists/1/load_contacts
-  def load_contacts
-    @cl = ContactsList.find(params[:id])
-    respond_to do |format|
-      format.js   { render :load_contacts}
-    end
-  end
-
+ 
 end
