@@ -53,12 +53,14 @@
   // load contacts for the list
   $('#contacts').change(function(){
      var selected = $('#contacts option:selected').val();
-     if(!(selected === '')){
+     if(selected === ''){
+      selected = 'select';
+     }
      $.ajax({
         url: '/contacts_lists/'+selected+'/load_contacts',
         type: "GET"
-      })
-      }
+     });
+      
   });
 
 

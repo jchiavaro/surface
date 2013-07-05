@@ -1,3 +1,8 @@
+//Remove modal window if exists
+
+$('#new-contact').trigger('close');
+$('#new-contact').remove();
+
 // Render delete view
 - content = escape_javascript(render('load_contacts_partial'))
 // Append rendered content to the body

@@ -3,7 +3,12 @@ class ContactsController < ApplicationController
   
    # GET /contacts/load_contacts
   def load_contacts
-    @cl =  ContactsList.find(params[:id])
+    if params[:id]== 'select'
+      @cl = ContactsList.new
+    else
+      @cl =  ContactsList.find(params[:id])
+    end
+    
     session[:cl_id] = @cl.id
     respond_to do |format|
       format.js   { render :load_contacts}
@@ -19,7 +24,7 @@ class ContactsController < ApplicationController
     end
   end
 
-   
+  # POST /contacts
   def create
     @contact = Contact.new(params[:contact])
     @cl = ContactsList.find(session[:cl_id]);

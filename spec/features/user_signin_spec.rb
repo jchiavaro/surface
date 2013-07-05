@@ -14,7 +14,7 @@ describe "the signin process" do
         fill_in 'user_password', with: @user.password
       end
       click_button 'Sign in'
-      page.should have_content 'Welcome again'
+      page.should have_content 'Welcome back'
     end
   end
 
