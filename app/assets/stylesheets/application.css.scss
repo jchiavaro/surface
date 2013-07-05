@@ -91,6 +91,7 @@ html, body {
 }
 
 .footer, .push {
+    margin-top: 100px;
     height: 4em;
 }
 
@@ -164,7 +165,24 @@ html, body {
     text-decoration: none;
 }
 
+.help-inline {
+    
+    display: block;
+    vertical-align: middle;
+    padding-left: 5px;
+
+}
+
+/*modal errors contact list MOVE IT */
 .help-inline-contacts-list {
+    color: #b94a48;
+    display: block;
+    vertical-align: middle;
+    padding-left: 5px;
+
+}
+/*modal errors contact  MOVE IT */
+.help-inline-contacts {
     color: #b94a48;
     display: block;
     vertical-align: middle;

@@ -1,16 +1,20 @@
-%div(class="gradientBoxesWithOuterShadows p1")
-  %h3 Take a tour
-  %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-  = link_to(image_tag("tour.png",:size => "160x50", :alt=> "addressbook"), {:controller=>"contacts_lists", :action=>"index"}, :title=>"Take a tour", :class=>"logo-dashboard")
-%div(class="gradientBoxesWithOuterShadows p2")
-  %h3 Manage your Address Book
-  %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-  = link_to(image_tag("addressbook.png",:size => "160x50", :alt=> "addressbook"), {:controller=>"contacts_lists", :action=>"index"}, :title=>"Manage Address Book", :class=>"logo-dashboard")
-%div(class="gradientBoxesWithOuterShadows p3")
-  %h3 Manage your Surveys
-  %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-  = link_to(image_tag("survey.png",:size => "160x50", :alt=> "survey"), {:controller=>"contacts_lists", :action=>"index"}, :title=>"Manage Survey", :class=>"logo-dashboard")
-%div(class="gradientBoxesWithOuterShadows p4")
-  %h3 Manage your preferences
-  %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-  = link_to(image_tag("preferences.png",:size => "160x50", :alt=> "preferences"), {:controller=>"contacts_lists", :action=>"index"}, :title=>"Manage Preferences", :class=>"logo-dashboard")
+%a{ href: "#"}
+  %div(class="gradientBoxesWithOuterShadows p1")
+    %h3 Take a tour
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    = link_to(image_tag("tour.png",:size => "160x50", :alt=> "addressbook"), {:controller=>"contacts_lists", :action=>"index"}, :title=>"Take a tour", :class=>"logo-dashboard")
+%a{ href: "/contacts_lists"}
+  %div(class="gradientBoxesWithOuterShadows p2")
+    %h3 Manage your Address Book
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    = link_to(image_tag("addressbook.png",:size => "160x50", :alt=> "addressbook"), {:controller=>"contacts_lists", :action=>"index"}, :title=>"Manage Address Book", :class=>"logo-dashboard")
+%a{ href: "#{}"}
+  %div(class="gradientBoxesWithOuterShadows p3")
+    %h3 Manage your Surveys
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    = link_to(image_tag("survey.png",:size => "160x50", :alt=> "survey"), {:controller=>"contacts_lists", :action=>"index"}, :title=>"Manage Survey", :class=>"logo-dashboard")
+%a{ href: "#"}
+  %div(class="gradientBoxesWithOuterShadows p4")
+    %h3 Manage your preferences
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    = link_to(image_tag("preferences.png",:size => "160x50", :alt=> "preferences"), {:controller=>"contacts_lists", :action=>"index"}, :title=>"Manage Preferences", :class=>"logo-dashboard")

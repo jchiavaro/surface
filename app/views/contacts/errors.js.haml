@@ -1,7 +1,7 @@
 // Remove the span that contains the error field if exist
-$('span.help-inline-contacts-list').remove();
+$('span.help-inline-contacts').remove();
+
 // Add message error next to the name field
-$('#contacts_list_name').after("<span class='help-inline-contacts-list'>can't be blank</span>");
-
-
-
+$('#contact_first_name').after("<span class='help-inline-contacts'> #{first_name_error}</span>");
+$('#contact_email').after("<span class='help-inline-contacts'>#{email_error_empty}</span>");
+$('#contact_email').after("<span class='help-inline-contacts'>#{email_error_invalid}</span>");

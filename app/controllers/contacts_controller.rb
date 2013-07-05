@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
     
     session[:cl_id] = @cl.id
     respond_to do |format|
-      format.js   { render :load_contacts}
+      format.js   { render :success}
     end
   end
 
@@ -20,18 +20,31 @@ class ContactsController < ApplicationController
     @cl = ContactsList.find(params[:cl_id])
     @c = Contact.new
     respond_to do |format|
-      format.js   { render :contact_modal}
+      format.js   { render :modal}
     end
   end
 
   # POST /contacts
   def create
-    @contact = Contact.new(params[:contact])
     @cl = ContactsList.find(session[:cl_id]);
-    @cl.contact.push(@contact)
-    respond_to do |format|
-      format.js   { render :load_contacts}
+    @contact = Contact.new(params[:contact])
+    if @contact.save
+      @cl.contact.push(@contact)
+        respond_to do |format|
+        format.js   { render :success}
+        end
+    else
+      
+      respond_to do |format|
+        format.js   { render :errors, :locals => {
+            :first_name_error => "#{@contact.errors[:first_name].first}" ,
+            :email_error_empty => "#{@contact.errors[:email].first}",
+            :email_error_invalid => "#{@contact.errors[:email].second }"}
+        }
+      end
     end
+    
+    
   end
 
  
