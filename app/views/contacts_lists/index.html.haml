@@ -8,10 +8,8 @@
       %i.icon-pencil &nbsp;Edit
     %a(class="btn btn-info" id="delete" data-remote='true' )
       %i.icon-trash &nbsp;Delete
-    
-   
 
-  %label Participants
+  %label Contacts
   %a(class="btn btn-info" id="add-contact" data-remote='true'  )
     %i.icon-plus &nbsp;Add
   %br
@@ -24,28 +22,43 @@
     %th Comments
     %th Actions
     %tbody#contact_list
-   
 
-
-
+#should-select{class: "popup-window"}
+  %h5(style="boder-bottom: 1px solid grey") Info Message
+  %h6 Select a contact list first!
+  %br
+  %a( id="close_x" onclick="$(this).trigger('close');")
+    %i(class="icon-remove")
+  %a(style="margin-left: 35px;" class='btn btn-primary' onclick="$(this).trigger('close');") Accept
   
-
+  
 :javascript
+
+  //show should select message
+  function show_select_msg(){
+  // lightbox the div
+    $('#should-select').lightbox_me({centered: true});
+  }
+  
   //Edit
   $('#edit').on('click', function(){
     var selected = $('#contacts option:selected').val();
     if(!(selected === '')){
     $('#edit').attr('href', '/contacts_lists/'+selected+'/edit');
+    }else{
+      $('#edit').removeAttr('href');
+      show_select_msg();
     }
   });
-
 
   //Delete
   $('#delete').on('click', function(){
     var selected = $('#contacts option:selected').val();
-    
     if(!(selected === '')){
     $('#delete').attr('href', '/contacts_lists/'+selected+'/delete');
+    }else{
+      $('#delete').removeAttr('href');
+      show_select_msg();
     }
     
   });
@@ -63,7 +76,6 @@
       
   });
 
-
   //show add contact modal
   $('#add-contact').on('click', function(){  
      var selected = $('#contacts option:selected').val();
@@ -73,5 +85,7 @@
         data: {cl_id: selected},
         type: "GET"
       })
-      }
+      }else{
+        show_select_msg();
+    }
    });

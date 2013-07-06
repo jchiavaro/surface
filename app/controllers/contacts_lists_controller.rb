@@ -39,10 +39,8 @@ class ContactsListsController < ApplicationController
   end
 
 
-
   # PUT /contacts_lists/1
   def update
-    puts "Llamo a update"
     @contacts_list = ContactsList.find(params[:id])
     respond_to do |format|
       if @contacts_list.update_attributes(params[:contacts_list])
@@ -78,7 +76,5 @@ class ContactsListsController < ApplicationController
       end
     end
   end
-
-
  
 end

@@ -5,12 +5,13 @@
       %td #{c.last_name}
       %td #{c.email}
       %td #{c.comments}
-      %td(style="overflow:auto;")
-        %button( name="edit" class="btn btn-info" type="submit" id="Edit" value="Edit")
+      %td
+        %a(class="btn btn-info" id="edit" data-remote='true' href="/contacts/#{c.id}/edit" )
           %i.icon-pencil
-        %button( name="delete" class="btn btn-info" type="submit" id="Delete" value="Delete")
+        %a(class="btn btn-info" id="delete" data-remote='true'  href="/contacts/#{c.id}/delete" )
           %i.icon-trash
 - else
   %tr
     %td(colspan="5")
       %span No results
+

@@ -16,7 +16,7 @@ SurfaceApp::Application.routes.draw do
   match 'logout' => 'sessions#logout'
 
   resources :contacts do
-
+    get 'delete', to: 'contacts#delete', on: :member
   end
 
 

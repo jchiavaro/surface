@@ -1,7 +1,10 @@
-//Remove modal window if exists
+//Remove modal windows if exists
 
 $('#new-contact').trigger('close');
 $('#new-contact').remove();
+
+$('#delete-contact').trigger('close');
+$('#delete-contact').remove();
 
 // Render delete view
 - content = escape_javascript(render('load_contacts_partial'))

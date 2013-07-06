@@ -1,5 +1,5 @@
 // Remove if exist
-$('#deletecl').remove();
+$('#delete-contact').remove();
 
 // Render delete view
 - content = escape_javascript(render('delete'))
@@ -8,9 +8,9 @@ $('#deletecl').remove();
 $('body').append("#{content}");
 
 // Add popup-window class
-$('#deletecl').addClass('popup-window');
+$('#delete-contact').addClass('popup-window');
 
 // lightbox the window
-$('#deletecl').lightbox_me({centered: true});
+$('#delete-contact').lightbox_me({centered: true});
 
 

@@ -1,0 +1,15 @@
+#delete-contact
+  %h5(style="boder-bottom: 1px solid grey") Do you want to delete this contact?
+  %h6 #{@c.first_name} #{@c.last_name}
+  %br
+  %a( id="close_x" onclick="$(this).trigger('close');")
+    %i(class="icon-remove")
+  %a(id="delete_accept_button" class='btn btn-primary pull-right' ) Accept
+  %a(id="cancel_button" class='btn btn-primary pull-right' onclick="$(this).trigger('close')") Cancel
+
+:javascript
+   $('#delete_accept_button').on('click', function(){
+      var url = '/contacts/'+#{@c.id};
+      $.post(url, "_method=delete", function(data) {});
+   });
+   
